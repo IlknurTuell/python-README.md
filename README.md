@@ -1,2 +1,2 @@
 # python-README.md
-Yaptığım Python projelerini buraya ekleyeceğim.
+Python öğrenme sürecinde yaptığım projeleri buraya ekliyorum. Umarım bu yolda kendimi güzel bir şekilde geliştirebilirim...
