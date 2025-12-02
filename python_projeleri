@@ -1,0 +1,35 @@
+# 1 ve 9 dahil olmak üzere rastgele bir sayı üret.
+# Kullanıcıdan tahmini al.
+# Kullanıcının tahminini rastgele sayı ile karşılaştır.(Düşük-Yüksek-Doğru)
+# Kullanıcı çıkış yazana kadar oyunu devam ettir.
+# Kullanıcının kaç tahmin yaptığını say ve oyun sonunda göster.
+
+import random
+sayi = random.randint(1,9)
+tahmin_sayisi = 0
+print("SAYI TAHMİN OYUNUNA HOŞGELDİNİZ! ÇIKMAK İÇİN 'çıkış' yazınız.")
+
+while True:
+    tahmin = input("Tahmininizi giriniz: ")
+
+    if tahmin.lower() == "çıkış": #lower: string içindeki bütün harfleri küçük harfe çevirir.
+        print(f"Oyun bitti. Toplam tahmin sayınız: {tahmin_sayisi}")
+        break
+
+    if not tahmin.isdigit(): #istigit: string içindeki tüm karakterler sayı mı diye bakar
+        print("Lütfen geçerli bir sayi giriniz.")
+        continue
+
+    tahmin = int(tahmin)
+    tahmin_sayisi += 1
+
+    if tahmin < sayi:
+        print("Çok düşük!")
+    elif tahmin > sayi:
+        print("Çok yüksek!")
+    else:
+        print(f"Tebrikler,doğru tahmin! \nToplam tahmin sayısı: {tahmin_sayisi}")
+
+        sayi = random.randint(1,9)
+        tahmin_sayisi = 0
+        print("\nYeni bir sayı seçildi,tekrar tahmin edin!")
