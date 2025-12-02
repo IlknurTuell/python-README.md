@@ -1,0 +1,46 @@
+alisveris_listesi = []
+
+while True:
+    #KULLANICIYA MENÜYÜ SUNALIM
+    print("\nYapmak istediğiniz işlemi seçiniz: ")
+    print("1-Ürün Ekle")
+    print("2-Ürün Sil")
+    print("3-Liseyi Göster")
+    print("4-Çıkış")
+
+    secim = input("Seçiminiz(1-4): ").strip()
+    secim = secim.replace("\r", "")
+    if secim == "":
+        print("Lütfen bir seçim yapın.")
+        continue
+
+    if secim == "1":
+        urun = input("Eklemek istediğiniz ürünü giriniz: ").strip()
+        if urun: #boş değilse
+            alisveris_listesi.append(urun)
+            print(f"{urun} listeye eklendi.")
+        else:
+            print("Boş ürün ekleyemezsiniz.")
+    
+    elif secim == "2":
+        urun = input("Silmek istediğiniz ürünü giriniz: ").strip()
+        if urun in alisveris_listesi:
+            alisveris_listesi.remove(urun)
+            print(f"{urun} listeden silindi.")
+        else:
+            print(f"{urun} listede bulunamadı.")
+    
+    elif secim == "3":
+        if alisveris_listesi:
+            print("Alışveriş listeniz: ")
+            for i,urun in enumerate(alisveris_listesi, 1):
+                print(f"{i}.{urun}")
+        else:
+            print("Liste boş.")
+    
+    elif secim == "4":
+        print("Program sonlandırılıyor.")
+        break
+    else:
+        print("Geçersiz seçim. Lütfen (1-4) arasında bir seçim yapınız.")
+        
