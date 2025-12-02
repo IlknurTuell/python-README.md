@@ -1,0 +1,32 @@
+#kullanıcıdan iki sayı alacağız. daha sonra yapmak istediği işlemleri seçesek (+,-,/,*) ve sonucunu ekrana yazdıracağız.
+
+print("***HESAP MAKİNESİ***")
+
+while True:
+    sayi1 = float(input("Birinci sayiyi giriniz:"))
+    sayi2 = float(input("İkinci sayiyi giriniz: "))
+    islem = input("Yapmak istediğiniz işlemi giriniz (+,-,/,*): ")
+
+    if islem == "+":
+        print("Sonuç : " , sayi1 + sayi2 )
+    elif islem == "-":
+        print("Sonuç : ", sayi1 - sayi2 )
+    elif islem == "/":
+        if sayi2 != 0:
+            print("Sonuç : ", sayi1 / sayi2 )
+        else: 
+            print("Hata : Bir sayıyı sıfıra bölemezsiniz.")
+    elif islem == "*":
+        print("Sonuç : ", sayi1 * sayi2 )
+    else:
+        print("Geçersiz işlem! ")
+    
+    devam = input("devam etmek istiyor musunuz? E/H ")
+    if devam == "e":
+        continue
+    elif devam == "h":
+        print("Program sonlandırıldı!")
+        break
+    else:
+        print("Geçersiz bir giriş, problam sonlandırıldı!")
+        break
