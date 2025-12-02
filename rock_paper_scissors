@@ -1,0 +1,46 @@
+
+import random
+print(("*" * 30) + "\nTas, Kağit, Makas\n" + ( "*" * 30))
+kullanici_skoru = 0
+bilgisayar_skoru = 0
+
+while True:
+    print("\n1 - Taş\n2 - Kağit\n3 - Makas")
+    kullanici_secimi = input("Senin seçimin: ")
+    bilgisayar_secimi = random.choice(["1","2","3"])
+
+    if kullanici_secimi == "1":
+        if bilgisayar_secimi == "1":
+          print("Bilgisayar seçimi : Taş\nBerabere. Skor Yok!")
+        elif bilgisayar_secimi == "2":
+          print("Bilgisayar seçimi: Kağıt\nKağıt taşı sarar. Kaybettin!")
+          bilgisayar_skoru += 100
+        elif bilgisayar_secimi == "3":
+          print("Bilgisayar seçimi: Makas\nTaş makası kırar. Kazandın!")
+          kullanici_skoru +=100
+
+    elif kullanici_secimi == "2":
+        if bilgisayar_secimi == "1":
+          print("Bilgisayar seçimi : Taş\nKağıt taşı sarar. Kazandın!")
+          kullanici_skoru +=100
+        elif bilgisayar_secimi == "2":
+          print("Bilgisayar seçimi: Kağıt\nBerabere. Skor Yok!")
+        elif bilgisayar_secimi == "3":
+          print("Bilgisayar seçimi: Makas\nMakas kağıdı keser. Kaybettin!")
+          bilgisayar_skoru +=100
+        
+    elif kullanici_secimi == "3":
+        if bilgisayar_secimi == "1":
+          print("Bilgisayar seçimi: Tas\nTaş makası kırar. Kaybettin!")
+          bilgisayar_skoru += 100
+        elif bilgisayar_secimi == "2":
+          print("Bilgisayar seçimi: Kağit\nMakas kağıdı keser. Kazandın!")
+          kullanici_skoru += 100
+        elif bilgisayar_secimi == "3":
+          print("Bilgisayar seçimi: Makas\nBerabere. Skor Yok!")
+        
+    else:
+       break
+       
+print(f" Kullanıcı Skoru: {kullanici_skoru} \n Bilgisayar Skoru: {bilgisayar_skoru}")
+
