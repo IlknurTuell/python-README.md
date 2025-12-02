@@ -1,0 +1,20 @@
+import random
+
+print("***RASTGELE ŞİFRE OLUŞTURMA***")
+
+harfler = "abcdefghijklmnoprstuvyzwqx"
+buyuk_harfler = harfler.upper() #upper:küçük harfleri büyüğe çevirir.
+rakamlar = "0123456789"
+semboller = "!^+%&/=?*-<>"
+
+tum_karakterler = harfler + buyuk_harfler + rakamlar + semboller 
+
+uzunluk = int(input("Şifrenizin uzunluğu kaç karakter olsun? "))
+
+sifre = "" #şifreyi oluşturmak için boş bir string aldık
+
+for i in range(uzunluk):
+    sifre += random.choice(tum_karakterler)
+
+print("\nOluşturulan Şifreniz : ")
+print(sifre)
