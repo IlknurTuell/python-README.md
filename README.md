@@ -1,2 +1,2 @@
 # python_mini_projeler-README.md
-Python öğrenme sürecinde yaptığım projeleri buraya ekliyorum. Umarım bu yolda kendimi güzel bir şekilde geliştirebilirim...
+
